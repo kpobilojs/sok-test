@@ -1,0 +1,16 @@
+{
+  "require": {
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "twig/twig": "^3.1"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "App\\": "App/"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+/* Login form */
+
+.login-form-section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.login-form-section:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.login-form {
+    width: 400px;
+    background-color: #fff;
+    display: inline-block;
+    padding: 2em;
+    vertical-align: middle;
+    border: #bfc3c6 solid 1px;
+}
+
+/* Alertify custom styling */
+
+.alertify .ajs-dialog {
+    min-height: unset;
+}
+
+.alertify .ajs-commands {
+    margin: -14px 4px 0 0;
+}
+
+.alertify .ajs-body .ajs-content {
+    border-radius: 6px;
+}
+
+.alertify .ajs-commands button.ajs-close {
+    background-image: unset;
+    display: block;
+    width: unset;
+    height: unset;
+}
+
+.alertify .ajs-commands button.ajs-close:after {
+    content: "x";
+    font-size: large;
+}
+
+/* Structure tree */
+#tree, #tree ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tree ul {
+    margin-left: 6px;
+    position: relative;
+}
+
+#tree ul ul {
+    margin-left: 6px;
+}
+
+#tree ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid #6c757d;
+}
+
+#tree li {
+    margin: 0;
+    padding: 0 1em;
+    line-height: 2em;
+    position: relative;
+    cursor: pointer;
+}
+
+#tree ul li:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 0;
+    border-top: 1px solid #6c757d;
+    margin-top: -1px;
+    position: absolute;
+    top: 1em;
+    left: 0;
+}
+
+#tree ul li:last-child:before {
+    background: #fff;
+    height: auto;
+    top: 1em;
+    bottom: 0;
+}
+
+#tree .active {
+    font-weight: 700;
+}
+
+#tree .branch > i:first-child {
+    width: 14px;
+    margin-right: 8px;
+    color: #6c757d;
+}

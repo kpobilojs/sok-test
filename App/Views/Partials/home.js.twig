@@ -1,0 +1,152 @@
+function activatePageForm() {
+    let submitButton = $('#submit-button');
+    $('#title').prop('disabled', false);
+    $('#description').prop('disabled', false);
+    submitButton.removeClass('d-none');
+    submitButton.addClass('d-inline-block');
+}
+
+// {# function inactivatePageForm() { #}
+// {# let submitButton = $('#submit-button'); #}
+//
+// {# $('#title').prop('disabled', true); #}
+// {# $('#description').prop('disabled', true); #}
+//
+// {# submitButton.removeClass('d-inline-block'); #}
+// {# submitButton.addClass('d-none'); #}
+// {# } #}
+//
+// {# function cleanPageForm() { #}
+// {# $('#title').val(''); #}
+// {# $('#description').val(''); #}
+// {# } #}
+//
+// {# function alertSuccessAndRedirect(message, url) { #}
+// {# alertify.alert(message); #}
+// {# $('.ajs-content').addClass('bg-success'); #}
+// {# window.setTimeout(function () { #}
+// {# window.location.replace(url); #}
+// {# }, 1500); #}
+// {# } #}
+//
+$(function () {
+
+    let pages = {{ pageListData|json_encode|raw }};
+    let formAction = '';
+
+    // TREE ACTIONS
+    // hide all branches
+    $('#tree').find('li').has("ul").each(function () {
+        $(this).children('ul').hide();
+    });
+    // hide all page action buttons
+    $('#tree li > .page-action-button').hide();
+    // hide page block
+    $('#page-block').hide();
+
+    $('#tree li').click(function () {
+//
+// {# let pageId = $(this).data('id'); #}
+//
+// {# // choose only one active page #}
+// {# $('#tree li > a:nth-of-type(1)').removeClass('active'); #}
+// {# $(this).children('a:nth-of-type(1)').addClass('active'); #}
+//
+// {# // show page block #}
+// {# $('#title').val(pages[parseInt(pageId)]['title']); #}
+// {# $('#description').val(pages[parseInt(pageId)]['description']); #}
+// {# inactivatePageForm(); #}
+// {# $('#page-block').fadeIn(); #}
+//
+// {# // show action buttons #}
+// {# $('.page-action-button').hide(); #}
+// {# $('#edit-page-button-' + pageId).show(); #}
+// {# $('#add-subpage-button-' + pageId).show(); #}
+// {# $('#remove-page-button-' + pageId).show(); #}
+// {# }); #}
+// {# // don't affect parents by clicking on children #}
+// {# $('.leaf').click(function (e) { #}
+// {# e.stopPropagation(); #}
+// {# }); #}
+// {# // show/hide branch #}
+// {# $('.branch').click(function (e) { #}
+// {# $(this).children('i:first').toggleClass('fa-angle-right fa-angle-down'); #}
+// {# $(this).children('ul').toggle(); #}
+// {# e.stopPropagation(); #}
+    });
+// {# // TREE ACTIONS END #}
+//
+// {# // PAGE ACTIONS #}
+// {# // show add-category form #}
+// {# $('#add-category-button').click(function () { #}
+// {# $('#page-block').hide(); #}
+// {# cleanPageForm(); #}
+// {# activatePageForm(); #}
+// {# $('#submit-button').text('Add category'); #}
+// {# $('#parent-id').val("0"); #}
+// {# formAction = '/add-page'; #}
+// {# $('#page-block').fadeIn(); #}
+// {# }); #}
+//
+// {# // show add-subpage form #}
+// {# $('.add-subpage-button').click(function (e) { #}
+// {# e.stopPropagation(); #}
+// {# $('#page-block').hide(); #}
+// {# cleanPageForm(); #}
+// {# activatePageForm(); #}
+// {# $('#submit-button').text('Add subpage'); #}
+// {# $('#parent-id').val($(this).data('id')); #}
+// {# formAction = '/add-page'; #}
+// {# $('#page-block').fadeIn(); #}
+// {# }); #}
+//
+// {# // remove page action #}
+// {# $('.remove-page-button').click(function (e) { #}
+// {# e.stopPropagation(); #}
+// {# $.ajax({ #}
+// {# type: 'POST', #}
+// {# url: '/remove-page', #}
+// {# data: {"page-id": $(this).data('id')}, #}
+// {# success: function (data) { #}
+// {# let response = JSON.parse(data); #}
+// {# if (response.success && response.redirect) { #}
+// {# alertSuccessAndRedirect(response.message, response.redirect); #}
+// {# } else { #}
+// {# alertify.alert(response.message); #}
+// {# $('.ajs-content').addClass('bg-danger'); #}
+// {# } #}
+// {# } #}
+// {# }); #}
+// {# }) #}
+//
+// {# // edit page action #}
+// {# $('.edit-page-button').click(function (e) { #}
+// {# e.stopPropagation(); #}
+// {# $('#page-block').hide(); #}
+// {# activatePageForm(); #}
+// {# $('#submit-button').text('Edit page'); #}
+// {# $('#page-id').val($(this).data('id')); #}
+// {# formAction = '/edit-page'; #}
+// {# $('#page-block').fadeIn(); #}
+// {# }); #}
+//
+// {# // submit add-page form #}
+// {# $('#page-form').submit(function (e) { #}
+// {# e.preventDefault(); #}
+// {# $.ajax({ #}
+// {# type: 'POST', #}
+// {# url: formAction, #}
+// {# data: $(this).serialize(), #}
+// {# success: function (data) { #}
+// {# let response = JSON.parse(data); #}
+// {# if (response.success && response.redirect) { #}
+// {# alertSuccessAndRedirect(response.message, response.redirect); #}
+// {# } else { #}
+// {# alertify.alert(response.message); #}
+// {# $('.ajs-content').addClass('bg-danger'); #}
+// {# } #}
+// {# } #}
+// {# }); #}
+// {# }); #}
+// PAGE ACTIONS END
+}

@@ -1,0 +1,26 @@
+{% for page in structuredPages %}
+
+    {% set branch = (page.children is not empty) %}
+
+    <li class="{% if branch %}branch{% else %}leaf{% endif %}" data-id="{{ page.id }}">{% if branch %}<i
+            class="fa fa-angle-right fa-lg"></i>{% endif %}<a href="#">{{ page.title }}</a>
+
+        {# ACTION BUTTONS #}
+        <a href="#" id="edit-page-button-{{ page.id }}" data-id="{{ page.id }}"
+           class="page-action-button edit-page-button text-secondary" title="Edit page"><i
+                    class="fa fa-edit fa-xs d-inline-block p-1 bg-light"></i></a>
+        <a href="#" id="add-subpage-button-{{ page.id }}" data-id="{{ page.id }}"
+           class="page-action-button add-subpage-button text-secondary" title="Add subpage"><i
+                    class="fa fa-plus fa-xs d-inline-block p-1 bg-light"></i></a>
+        <a href="#" id="remove-page-button-{{ page.id }}" data-id="{{ page.id }}"
+           class="page-action-button remove-page-button text-secondary" title="Remove page"><i
+                    class="fa fa-minus fa-xs d-inline-block p-1 bg-light"></i></a>
+
+        {# BRANCH EXTENSION #}
+        {% if branch %}
+            {% set children = {'structuredPages': page.children} %}
+            <ul>{% include 'Partials/branch.twig' with children %}</ul>
+        {% endif %}
+    </li>
+
+{% endfor %}
