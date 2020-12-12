@@ -26,5 +26,3 @@
 ## Run app
 * http://localhost - start-up page
 * test credentials - username "admin", password "admin"
-# sok-test
-# sok-test
