@@ -16,9 +16,4 @@ class Config
      * Error handling
      */
     public const SHOW_ERRORS = true;
-
-    /**
-     * Mail service
-     */
-    public const EMAIL_FROM = 'test@test.com';
 }
